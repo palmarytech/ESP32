@@ -8,6 +8,7 @@
 #include "EncoderRead.h"
 #include "ui.h"
 #include "mqtt_control.h"
+#include <OneButton.h>
 
 // 旋转编码器引脚定义
 #define ENCODER_S1 1  // A 相 (CLK)
@@ -22,9 +23,13 @@ extern EncoderRead encoder;
 
 extern bool lightOn;
 extern int lightBrightness;
+extern bool socketOn; // 新增：插座开关状态
+extern int selectedDevice; // 新增：当前选中的设备（0: 灯, 1: 插座）
+extern bool mqttConnected; // 新增：MQTT 连接状态
 //lightMutex 是一个互斥信号量，用于保护 lightOn 和 lightBrightness，确保同一时间只有一个任务可以访问或修改它们
 extern SemaphoreHandle_t lightMutex;
 
+extern OneButton button; // 新增：OneButton 实例
 // 任务创建函数
 void createTasks();
 

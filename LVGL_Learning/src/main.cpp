@@ -51,7 +51,7 @@ void setup()
   pinMode(15, OUTPUT);
   digitalWrite(15, HIGH);
   // 初始化 Label 文本
-  lv_label_set_text(ui_Label6, "Stop");
+  // lv_label_set_text(ui_Label6, "Stop");
 
   // 初始化 WiFi
   initWiFi();

@@ -9,6 +9,7 @@ const char *mqttUser = "mqtt_xiaomi";
 const char *mqttPassword = "password";
 const char *mqttClientId = "esp32_light_controller";
 const char *powerTopic = "homeassistant/light/control/power";
+const char *plugTopic = "homeassistant/plug/control/power";
 const char *brightnessTopic = "homeassistant/light/control/brightness";
 
 WiFiClient espClient;
@@ -48,6 +49,20 @@ void setLightPower(bool power)
     }
 }
 
+void setPlugPower(bool power)
+{
+    if (client.connected())
+    {
+        String payload = power ? "ON" : "OFF";
+        client.publish(plugTopic, payload.c_str());
+        Serial.printf("Published power: %s\n", payload.c_str());
+    }
+    else
+    {
+        Serial.println("MQTT not connected, cannot set power");
+    }
+}
+
 void setLightBrightness(int brightness)
 {
     if (client.connected())
@@ -60,6 +75,11 @@ void setLightBrightness(int brightness)
     {
         Serial.println("MQTT not connected, cannot set brightness");
     }
+}
+
+bool isMQTTConnected()
+{
+    return client.connected();
 }
 
 void loopMQTT()

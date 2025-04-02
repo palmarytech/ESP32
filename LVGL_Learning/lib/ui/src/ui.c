@@ -12,14 +12,12 @@
 void ui_Screen1_screen_init(void);
 lv_obj_t * ui_Screen1;
 lv_obj_t * ui_Label2;
-void ui_event_Slider1(lv_event_t * e);
-lv_obj_t * ui_Slider1;
-lv_obj_t * ui_Label3;
 lv_obj_t * ui_Label4;
-lv_obj_t * ui_Label5;
-lv_obj_t * ui_Label6;
 lv_obj_t * ui_Image3;
 lv_obj_t * ui_Image4;
+lv_obj_t * ui_Image1;
+lv_obj_t * ui_Label1;
+lv_obj_t * ui_Image2;
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -38,15 +36,6 @@ lv_obj_t * ui____initial_actions0;
 ///////////////////// ANIMATIONS ////////////////////
 
 ///////////////////// FUNCTIONS ////////////////////
-void ui_event_Slider1(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED) {
-        _ui_slider_set_text_value(ui_Label4, target, "", "%");
-    }
-}
 
 ///////////////////// SCREENS ////////////////////
 

@@ -29,14 +29,12 @@ extern "C" {
 void ui_Screen1_screen_init(void);
 extern lv_obj_t * ui_Screen1;
 extern lv_obj_t * ui_Label2;
-void ui_event_Slider1(lv_event_t * e);
-extern lv_obj_t * ui_Slider1;
-extern lv_obj_t * ui_Label3;
 extern lv_obj_t * ui_Label4;
-extern lv_obj_t * ui_Label5;
-extern lv_obj_t * ui_Label6;
 extern lv_obj_t * ui_Image3;
 extern lv_obj_t * ui_Image4;
+extern lv_obj_t * ui_Image1;
+extern lv_obj_t * ui_Label1;
+extern lv_obj_t * ui_Image2;
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -45,9 +43,13 @@ extern lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
 LV_IMG_DECLARE(ui_img_wifi_off_png);    // assets/wifi_off.png
+LV_IMG_DECLARE(ui_img_mqtt_off_png);    // assets/MQTT_off.png
 LV_IMG_DECLARE(ui_img_1634008757);    // assets/light-bulb-off.png
 LV_IMG_DECLARE(ui_img_569232113);    // assets/light-bulb-on.png
 LV_IMG_DECLARE(ui_img_wifi_on_png);    // assets/wifi_on.png
+LV_IMG_DECLARE(ui_img_433637665);    // assets/plug-off.png
+LV_IMG_DECLARE(ui_img_570863325);    // assets/plug-on.png
+LV_IMG_DECLARE(ui_img_mqtt_on_png);    // assets/MQTT_on.png
 
 // UI INIT
 void ui_init(void);
